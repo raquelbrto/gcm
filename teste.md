@@ -122,3 +122,25 @@ git gc --prune=now
 ```
 
 ---
+
+
+```bash
+
+# Inicia o bisect
+git bisect start
+
+# Marca o commit ruim (7)
+git bisect bad <commit7>
+
+# Marca o commit bom (1)
+git bisect good <commit1>
+
+# Git agora testará commits intermediários automaticamente
+# Após cada teste (ex: rodar o app/testes), marque:
+git bisect good  # Se estiver tudo certo
+git bisect bad   # Se o bug ainda ocorre
+
+# Após identificar o commit com problema:
+# Finaliza o processo
+git bisect reset
+```
